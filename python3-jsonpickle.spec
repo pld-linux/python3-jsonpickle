@@ -30,7 +30,8 @@ BuildRequires:	python3-pandas
 BuildRequires:	python3-pytest >= 3.5
 BuildRequires:	python3-pytest-black-multipy
 BuildRequires:	python3-pytest-cov
-BuildRequires:	python3-pytest-flake8 >= 1.1.1
+BuildRequires:	python3-pytest-flake8
+# >= 1.1.1 when available
 BuildRequires:	python3-scipy
 # >= 1.9.3 for python 3.11+
 BuildRequires:	python3-scikit-learn
