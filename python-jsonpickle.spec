@@ -8,13 +8,14 @@
 Summary:	Python library for serializing any arbitrary object graph into JSON
 Summary(pl.UTF-8):	Biblioteka Pythona do serializacji dowolnego grafu obiektów do JSON-a
 Name:		python-jsonpickle
-Version:	2.0.0
+# keep 2.x here for python2 support
+Version:	2.2.0
 Release:	1
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/jsonpickle/
 Source0:	https://files.pythonhosted.org/packages/source/j/jsonpickle/jsonpickle-%{version}.tar.gz
-# Source0-md5:	ed497bb9c2963ba3584ef6ae3454cc13
+# Source0-md5:	665c2a1dcb576c0db86750efc2a3e89e
 URL:		https://pypi.org/project/jsonpickle/
 %if %{with python2}
 BuildRequires:	python-modules >= 1:2.7
@@ -32,10 +33,9 @@ BuildRequires:	python-pytest-cov
 BuildRequires:	python-pytest-flake8
 BuildRequires:	python-scikit-learn
 BuildRequires:	python-simplejson
-BuildRequires:	python-sqlalchemy
+BuildRequires:	python-sqlalchemy >= 1.2
 # TODO
 #BuildRequires:	python-bson
-#BuildRequires:	python-demjson
 #BuildRequires:	python-feedparser
 #BuildRequires:	python-ujson
 #BuildRequires:	python-yajl
@@ -62,7 +62,6 @@ BuildRequires:	python3-simplejson
 BuildRequires:	python3-sqlalchemy
 # TODO
 #BuildRequires:	python3-bson
-#BuildRequires:	python3-demjson
 #BuildRequires:	python3-feedparser
 #BuildRequires:	python3-ujson
 #BuildRequires:	python3-yajl
@@ -83,12 +82,12 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 jsonpickle is a library for the two-way conversion of complex Python
 objects and JSON. jsonpickle builds upon the existing JSON encoders,
-such as simplejson, json, and demjson.
+such as simplejson, json.
 
 %description -l pl.UTF-8
 jsonpickle to biblioteka do dwustronnej konwersji między złożonymi
 obiektami Pythona a JSON-em. jsonpickle jest zbudowany w oparciu o
-istniejące kodery JSON-a, takie jak simplejson, json i demjson.
+istniejące kodery JSON-a, takie jak simplejson, json.
 
 %package -n python3-jsonpickle
 Summary:	Python library for serializing any arbitrary object graph into JSON
@@ -99,12 +98,12 @@ Requires:	python3-modules >= 1:3.2
 %description -n python3-jsonpickle
 jsonpickle is a library for the two-way conversion of complex Python
 objects and JSON. jsonpickle builds upon the existing JSON encoders,
-such as simplejson, json, and demjson.
+such as simplejson, json.
 
 %description -n python3-jsonpickle -l pl.UTF-8
 jsonpickle to biblioteka do dwustronnej konwersji między złożonymi
 obiektami Pythona a JSON-em. jsonpickle jest zbudowany w oparciu o
-istniejące kodery JSON-a, takie jak simplejson, json i demjson.
+istniejące kodery JSON-a, takie jak simplejson, json.
 
 %package apidocs
 Summary:	API documentation for Python jsonpickle module
