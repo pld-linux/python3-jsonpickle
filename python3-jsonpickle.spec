@@ -7,7 +7,7 @@ Summary:	Python library for serializing any arbitrary object graph into JSON
 Summary(pl.UTF-8):	Biblioteka Pythona do serializacji dowolnego grafu obiektów do JSON-a
 Name:		python3-jsonpickle
 Version:	3.0.2
-Release:	1
+Release:	2
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/jsonpickle/
