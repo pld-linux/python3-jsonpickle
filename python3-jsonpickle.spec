@@ -6,17 +6,17 @@
 Summary:	Python library for serializing any arbitrary object graph into JSON
 Summary(pl.UTF-8):	Biblioteka Pythona do serializacji dowolnego grafu obiektów do JSON-a
 Name:		python3-jsonpickle
-Version:	3.0.2
-Release:	3
+Version:	4.1.0
+Release:	1
 License:	BSD
 Group:		Libraries/Python
 #Source0Download: https://pypi.org/simple/jsonpickle/
 Source0:	https://files.pythonhosted.org/packages/source/j/jsonpickle/jsonpickle-%{version}.tar.gz
-# Source0-md5:	2f7264ad439c2641e6846fd0a114faca
+# Source0-md5:	39bec275ad39ebd3699f962dabd6cdf8
 URL:		https://pypi.org/project/jsonpickle/
+BuildRequires:	python3-build
+BuildRequires:	python3-installer
 BuildRequires:	python3-modules >= 1:3.7
-BuildRequires:	python3-setuptools >= 1:42
-BuildRequires:	python3-setuptools_scm >= 3.4.1
 BuildRequires:	python3-toml
 %if %{with tests}
 %if "%{py3_ver}" == "3.7"
@@ -81,7 +81,7 @@ Dokumentacja API modułu Pythona jsonpickle.
 %{__sed} -i -e '/^norecursedirs/ s/$/ build-3/' pytest.ini
 
 %build
-%py3_build
+%py3_build_pyproject
 
 %if %{with tests}
 PYTEST_DISABLE_PLUGIN_AUTOLOAD=1 \
@@ -96,7 +96,7 @@ sphinx-build-3 -b html docs docs/_build/html
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%py3_install
+%py3_install_pyproject
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -105,7 +105,7 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc CHANGES.rst LICENSE README.rst
 %{py3_sitescriptdir}/jsonpickle
-%{py3_sitescriptdir}/jsonpickle-%{version}-py*.egg-info
+%{py3_sitescriptdir}/jsonpickle-%{version}.dist-info
 
 %if %{with doc}
 %files apidocs
